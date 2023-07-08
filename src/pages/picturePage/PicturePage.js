@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import PictureId from '../../components/pictureID/PictureId'
 
 function PicturePage() {
   return (
@@ -15,6 +16,7 @@ function PicturePage() {
             <li>Has de borrar estas instrucciones cuando lo tengas.</li>
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
+      <PictureId />  
     </main> 
   )
 }

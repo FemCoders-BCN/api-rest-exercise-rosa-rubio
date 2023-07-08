@@ -7,10 +7,11 @@ axios.defaults.headers.post['Accept'] = 'application/json';
 
 export const LoremPicsumService = () => {
   const urlGetAll = '/v2/list';
-  //Los endpoints que tienen llaves con un texto dentro, quiere decir que le has de pasar algún valor /id/{image}/{size}, eso significa que image y size son valores que te dirá la documentación cómo se pasan.
+  //Los endpoints que tienen llaves con un texto dentro, quiere decir que le has de pasar algún valor
+  ///id/{image}/{size}, eso significa que image y size son valores que te dirá la documentación cómo se pasan.
   const urlGetById = '/id/{image}/{size}';
-  /* Construye la url para el tercer endpoint
-  const urlGetGrayscale = ''; */
+  ///Construye la url para el tercer endpoint
+  const urlGetGrayscale = '/{width}/{height}?grayscale'
 
   const getAll = () => {
     const response = axios.get(urlGetAll);
@@ -28,6 +29,7 @@ export const LoremPicsumService = () => {
 
   return {
     getAll,
-    //Deberás retornar el método para que puedas exportarlo
+    getById,
+    getRandomGrayscale //Deberás retornar el método para que puedas exportarlo
   }
 }
