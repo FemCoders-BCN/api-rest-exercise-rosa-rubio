@@ -43,7 +43,7 @@ export default function PictureId() {
       </form>
       </div>
       <div className="image-container">
-        {cardById && <img src={cardById} alt="" />}
+        {cardById && <img src={cardById} style={{width: imageSize}} alt="" />}
       </div>
     </div>
 )}

@@ -11,7 +11,7 @@ export const LoremPicsumService = () => {
   ///id/{image}/{size}, eso significa que image y size son valores que te dirá la documentación cómo se pasan.
   const urlGetById = '/id';
   ///Construye la url para el tercer endpoint
-  const urlGetGrayscale = '/{width}/{height}?grayscale'
+  const urlGetGrayscale = '?grayscale'
 
   const getAll = () => {
     const response = axios.get(urlGetAll);
@@ -23,8 +23,9 @@ export const LoremPicsumService = () => {
     return response;
   }; 
 
-  const getRandomGrayscale = () => {
-    //construye como sería el método de la petición para obtener una imagen aleatoria en escala de grises (apóyate en la documentación)
+  const getRandomGrayscale = (width, height) => {
+    const response = axios.get(`/${width}/${height}${urlGetGrayscale}`)//construye como sería el método de la petición para obtener una imagen aleatoria en escala de grises (apóyate en la documentación)
+    return response;
   }; 
 
   return {

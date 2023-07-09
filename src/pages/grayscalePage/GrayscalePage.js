@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import PictureGrayScale from '../../components/pictureGrayScale/PictureGrayScale'
 
 function GrayscalePage() {
   return (
@@ -15,6 +16,7 @@ function GrayscalePage() {
             <li>Has de borrar estas instrucciones cuando lo tengas.</li>
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
+        <PictureGrayScale />
     </main>
   )
 }
