@@ -5,25 +5,23 @@ import './PictureId.css';
 export default function PictureId() {
   const [cardById, setCardById] = useState(null);
   const [imageId, setImageId] = useState('');
-  const [imageSize, setImageSize] = useState('');
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setImageId(event.target.elements.imageId.value);
-    setImageSize(event.target.elements.imageSize.value);
   }
   
   useEffect(() => {
     const service = LoremPicsumService();
 
-    if (imageId && imageSize) {
-      service.getById(imageId, imageSize)
+    if (imageId) {
+      service.getById(imageId)
         .then(response => {
-          setCardById(response.request.responseURL);
+          setCardById(response.request.responseURL)
         })
         .catch(error => console.log(error));
     }
-  }, [imageId, imageSize]);
+  }, [imageId]);
 
   return (
     <div>
@@ -34,16 +32,11 @@ export default function PictureId() {
           <input type="text" name="imageId" required />
         </label>
         <br />
-        <label>
-          Tamaño en píxeles:
-          <input type="text" name="imageSize" required />
-        </label>
-        <br />
         <button type="submit">Renderizar imagen</button>
       </form>
       </div>
       <div className="image-container">
-        {cardById && <img src={cardById} style={{width: imageSize}} alt="" />}
+        {cardById && <img src={cardById} alt="" />}
       </div>
     </div>
 )}

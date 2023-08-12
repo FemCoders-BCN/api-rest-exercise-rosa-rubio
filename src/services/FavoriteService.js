@@ -9,12 +9,10 @@ export default function getAll() {
     return response;
   };
 
-export function postPictures(savedData) {
-        axios.post('http://localhost:5000/pictures', savedData)
-        .then(response => {
-          console.log('Data saved to server:', response.data);
-        })
-        .catch(error => {
-          console.error('Error saving data:', error.message);
-        });
+export function postPictures() {
+    const response = axios.post('http://localhost:5000/pictures', {
+          author: "Ale Esca",
+          download_url: "https://picsum.photos/id/25/5000/3333"
+      })
+    return response;
 }
