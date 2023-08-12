@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Read from '../../components/read/Read'
-import Create from '../../components/create/Create'
+// import Create from '../../components/create/Create'
 
 function FavoritesPage() {
   return (
@@ -28,7 +28,6 @@ function FavoritesPage() {
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
         <Read />
-        <Create />
     </main>
   )
 }
