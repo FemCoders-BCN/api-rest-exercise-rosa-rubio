@@ -3,6 +3,8 @@ import { FavoriteService } from '../../services/FavoriteService';
 
 export default function Create() {
 
+
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         const name = event.target.elements.author.value;
@@ -10,6 +12,8 @@ export default function Create() {
 
         const service = FavoriteService();
         service.postPictures(name, url);
+
+        window.location.reload();
   }
 
     return (
