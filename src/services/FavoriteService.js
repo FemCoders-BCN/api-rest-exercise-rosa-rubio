@@ -6,10 +6,17 @@ axios.defaults.headers.post['Accept'] = 'application/json';
 
 export const FavoriteService = () => {
 
+const urlGetById = '?id';
+
 const getAll = () => {
     const response = axios.get();
     return response;
   };
+
+const getById = (id) => {
+  const response = axios.get(`${urlGetById}=${id}`);
+  return response;
+  };  
 
 const postPictures = (name, url) => {
     const response = axios.post('http://localhost:5000/pictures', {
@@ -19,9 +26,21 @@ const postPictures = (name, url) => {
     return response;
 }
 
+const deletePicture = (id) => {
+  const response = axios.delete(`${id}`);
+  return response;
+  };
+
+const updatePictures = () => {
+  const response = axios.post()
+}
+
 return {
   getAll,
-  postPictures
+  getById,
+  postPictures,
+  updatePictures,
+  deletePicture
 }
 
 }

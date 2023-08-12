@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { FavoriteService } from '../../services/FavoriteService';
-
+import Update from '../../components/update/Update';
 
 const Read = () => {
   
@@ -15,12 +15,20 @@ const Read = () => {
         .catch(error => console.log(error))
   }, []);
 
-  const handleOnClickDelete = () => {
+  const handleOnClickDelete = (pictureId) => {
+    
+    const service = FavoriteService();
+    service.deletePicture(pictureId)
+      .then(response => console.log(pictureId))
+      .catch(error => console.log(error))
 
+      window.location.reload();
   }
 
-  const handleOnClickEdit = () => {
-
+  const handleOnClickEdit = (pictureId) => {
+    <Update
+      id = {pictureId} 
+    />
   }
   
   return (
@@ -33,8 +41,8 @@ const Read = () => {
           <div>Author: {picture.author}</div>
           <img src={picture.download_url} alt={picture.author} />
           <div>
-            <button onClick={handleOnClickDelete}>Eliminar</button>
-            <button onClick={handleOnClickEdit}>Editar</button>
+            <button onClick={() => handleOnClickDelete(picture.id)}>Eliminar</button>
+            <button onClick={() => handleOnClickEdit(picture.id)}>Editar</button>
           </div>
         </div>
       ))}
