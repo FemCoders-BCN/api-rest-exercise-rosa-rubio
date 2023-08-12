@@ -11,17 +11,17 @@ const getAll = () => {
     return response;
   };
 
-// const postPictures = () => {
-//     const response = axios.post('http://localhost:5000/pictures', {
-//           author: "Ale Esca",
-//           download_url: "https://picsum.photos/id/25/5000/3333"
-//       })
-//     return response;
-// }
+const postPictures = (name, url) => {
+    const response = axios.post('http://localhost:5000/pictures', {
+          author: name,
+          download_url: url
+      })
+    return response;
+}
 
 return {
-  getAll
-  // postPictures
+  getAll,
+  postPictures
 }
 
 }

@@ -14,6 +14,14 @@ const Read = () => {
         .then(response => setPictures(response.data))
         .catch(error => console.log(error))
   }, []);
+
+  const handleOnClickDelete = () => {
+
+  }
+
+  const handleOnClickEdit = () => {
+
+  }
   
   return (
     <div>
@@ -24,6 +32,10 @@ const Read = () => {
           <div>ID: {picture.id}</div>
           <div>Author: {picture.author}</div>
           <img src={picture.download_url} alt={picture.author} />
+          <div>
+            <button onClick={handleOnClickDelete}>Eliminar</button>
+            <button onClick={handleOnClickEdit}>Editar</button>
+          </div>
         </div>
       ))}
       </div>
