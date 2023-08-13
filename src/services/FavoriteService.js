@@ -16,8 +16,8 @@ const getAll = () => {
 const getById = (id) => {
   const response = axios.get(`${urlGetById}=${id}`);
   return response;
-  };  
-
+  }; 
+  
 const postPictures = (name, url) => {
     const response = axios.post('http://localhost:5000/pictures', {
           author: name,
@@ -26,14 +26,19 @@ const postPictures = (name, url) => {
     return response;
 }
 
+const updatePictures = (id, name, url) => {
+  const response = axios.put(`${id}`, {
+    author: name,
+    download_url: url
+})
+  return response;
+}
+
 const deletePicture = (id) => {
   const response = axios.delete(`${id}`);
   return response;
-  };
+};
 
-const updatePictures = () => {
-  const response = axios.post()
-}
 
 return {
   getAll,

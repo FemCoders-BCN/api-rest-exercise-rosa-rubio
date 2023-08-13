@@ -1,9 +1,6 @@
-// import { useState} from 'react';
 import { FavoriteService } from '../../services/FavoriteService';
 
 export default function Create() {
-
-
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
