@@ -6,9 +6,9 @@ import Create from '../../components/create/Create'
 function FavoritesPage() {
   return (
     <main>
-        <h2>Aquí estará la página principal donde guardarás tus objetos favoritos</h2>
+        {/* <h2>Aquí estará la página principal donde guardarás tus objetos favoritos</h2> */}
         <Navbar/>
-        <ul>
+        {/* <ul>
             <p>INSTRUCCIONES</p>
             <li>Crea un servicio llamado FavoriteService.js siguiendo el ejemplo de LoremPicsumService.js, que contenga toda la lógica que necesites para realizar el CRUD, usando axios, tu endpoint será el que te proporcione el json-server.</li>
             <li>Para tener un servidor encendido que te permita hacer un CRUD con tu pseudo base de datos, has de activar tu json-server en un puerto diferente al que tienes de node donde funciona tu aplicación de react, esto lo haces con el siguiente comando: json-server --watch src/assets/data/picturesDB.json --port 5000</li>
@@ -26,7 +26,7 @@ function FavoritesPage() {
             <li>Crea los componentes que necesites, estará funcionando cuando podamos ver los cambios del CRUD en nuestro archivo picturesDB.json</li>
             <li>Has de borrar estas instrucciones cuando lo tengas.</li>
             <li>Los estilos los has de realizar tú misma.</li>
-        </ul>
+        </ul> */}
         <Create />
         <Read />
     </main>

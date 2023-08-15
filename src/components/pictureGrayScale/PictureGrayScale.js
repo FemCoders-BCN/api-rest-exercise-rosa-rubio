@@ -19,7 +19,7 @@ export default function PictureGrayScale() {
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <button type="submit">Obtener imagen</button>
+        <button type="submit">Get image</button>
       </form>
       {grayScaleImg && <img src={grayScaleImg} alt="Imagen en escala de grises" />}
     </div>

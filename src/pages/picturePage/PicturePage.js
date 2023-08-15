@@ -5,9 +5,9 @@ import PictureId from '../../components/pictureID/PictureId'
 function PicturePage() {
   return (
     <main>
-        <h2>Aquí estará la imagen de la segunda llamada</h2>
+        {/* <h2>Aquí estará la imagen de la segunda llamada</h2> */}
         <Navbar/>
-        <ul>
+        {/* <ul>
             <p>INSTRUCCIONES</p>
             <li>Crea los componentes que necesites para imprimir lo siguiente (siguiendo el ejemplo del componente PictureObject):</li>
             <ol>
@@ -15,7 +15,7 @@ function PicturePage() {
             </ol>
             <li>Has de borrar estas instrucciones cuando lo tengas.</li>
             <li>Los estilos los has de realizar tú misma.</li>
-        </ul>
+        </ul> */}
       <PictureId />  
     </main> 
   )

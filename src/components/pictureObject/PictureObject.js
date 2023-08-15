@@ -17,7 +17,7 @@ function PictureObject() {
 
   return (
     <div>
-      <h1>Las 30 primeras imágenes de Lorem Picsum</h1>
+      <h1>The first 30 images from Lorem Picsum</h1>
       <div className="pictures-container">
       {pictures.map(picture => (
         <div key={picture.id}>

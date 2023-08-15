@@ -28,11 +28,11 @@ export default function PictureId() {
       <div>  
       <form onSubmit={handleFormSubmit}>
         <label>
-          ID de imagen:
+          Image ID:
           <input type="text" name="imageId" required />
         </label>
         <br />
-        <button type="submit">Renderizar imagen</button>
+        <button type="submit">Render image</button>
       </form>
       </div>
       <div className="image-container">
