@@ -1,22 +1,33 @@
-import React from 'react'
+import { useState } from 'react';
+import { LoremPicsumService } from '../../services/LoremPicsumService';
 import Navbar from '../../components/navbar/Navbar'
 import PictureGrayScale from '../../components/pictureGrayScale/PictureGrayScale'
 
 function GrayscalePage() {
+
+  const [grayScaleImg, setGrayScaleImg] = useState(null);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const service = LoremPicsumService();
+    service.getRandomGrayscale()
+      .then(response => {
+        setGrayScaleImg(response.request.responseURL);
+      })
+      .catch(error => console.log(error));
+  }
+
   return (
     <main>
-        {/* <h2>Aquí estará la imagen aleatoria en escala de grises de la tercera llamada</h2> */}
         <Navbar/>
-        {/* <ul>
-            <p>INSTRUCCIONES</p>
-            <li>Crea los componentes que necesites para imprimir lo siguiente (siguiendo el ejemplo del componente PictureObject):</li>
-            <ol>
-                <li>La fotografía (queremos ver la imagen en nuestra app, no queremos la url).</li>
-            </ol>
-            <li>Has de borrar estas instrucciones cuando lo tengas.</li>
-            <li>Los estilos los has de realizar tú misma.</li>
-        </ul> */}
-        <PictureGrayScale />
+        <div>
+          <p>Click the button below to get a random gray scale image:</p>
+          <form onSubmit={handleFormSubmit}>
+            <button type="submit">Click me!</button>
+          </form>
+        </div>
+        <PictureGrayScale image={grayScaleImg}/>
     </main>
   )
 }

@@ -1,22 +1,46 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import PictureId from '../../components/pictureID/PictureId'
+import { useState, useEffect } from 'react';
+import { LoremPicsumService } from '../../services/LoremPicsumService';
+import Navbar from '../../components/navbar/Navbar';
+import PictureId from '../../components/pictureID/PictureId';
 
 function PicturePage() {
+  
+  const [cardById, setCardById] = useState(null);
+  const [imageId, setImageId] = useState('');
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setImageId(event.target.elements.imageId.value);
+  }
+  
+  useEffect(() => {
+    
+    const service = LoremPicsumService();
+
+    if (imageId) {
+      service.getById(imageId)
+        .then(response => {
+          setCardById(response.request.responseURL)
+        })
+        .catch(error => console.log(error));
+    }
+  }, [imageId]);
+
+  
   return (
     <main>
-        {/* <h2>Aquí estará la imagen de la segunda llamada</h2> */}
         <Navbar/>
-        {/* <ul>
-            <p>INSTRUCCIONES</p>
-            <li>Crea los componentes que necesites para imprimir lo siguiente (siguiendo el ejemplo del componente PictureObject):</li>
-            <ol>
-                <li>La fotografía (queremos ver la imagen en nuestra app, no queremos la url),.</li>
-            </ol>
-            <li>Has de borrar estas instrucciones cuando lo tengas.</li>
-            <li>Los estilos los has de realizar tú misma.</li>
-        </ul> */}
-      <PictureId />  
+        <div>
+          <form onSubmit={handleFormSubmit}>
+            <label>
+            Image ID:
+            <input type="text" name="imageId" required />
+            </label>
+            <br />
+            <button type="submit">Render image</button>
+          </form>
+        </div>
+      <PictureId id={cardById}/>  
     </main> 
   )
 }

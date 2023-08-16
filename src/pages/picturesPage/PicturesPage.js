@@ -1,24 +1,27 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import PictureObject from '../../components/pictureObject/PictureObject'
+import { useState, useEffect } from 'react';
+import { LoremPicsumService } from '../../services/LoremPicsumService';
+import Navbar from '../../components/navbar/Navbar';
+import PictureObject from '../../components/pictureObject/PictureObject';
+import '../../components/pictureObject/PictureObject.css';
 
 function PicturesPage() {
+
+    const [pictures, setPictures] = useState([]);
+   
+    useEffect(() => {  
+      const service = LoremPicsumService();
+      service.getAll()
+      .then(response => setPictures(response.data))
+      .catch(error => console.log(error))
+    }, []);
+  
+
   return (
     <main>
-        {/* <h2>Aquí estarán todos los objetos de la primera llamada</h2> */}
         <Navbar/>
-        {/* <ul>
-            <p>INSTRUCCIONES</p>
-            <li>Crea los componentes que necesites para imprimir una lista o tarjetas que contengan lo siguiente (deberán estar todos los objetos de la llamada a la API):</li>
-            <ol>
-                <li>El id de la imagen.</li>
-                <li>Su autor.</li>
-                <li>La fotografía (queremos ver la imagen en nuestra app, no queremos la url).</li>
-            </ol>
-            <li>Has de borrar estas instrucciones cuando lo tengas.</li>
-            <li>Los estilos los has de realizar tú misma.</li>
-        </ul> */}
-        <PictureObject/>
+        <div className="pictures-container">
+          {pictures.map((picture, index) => (<PictureObject picture={picture} key={index}/>))}
+        </div>
     </main>
   )
 }
