@@ -2,11 +2,6 @@
   "pictures": [
     {
       "author": "Rosa Rubio",
-      "download_url": "https://img.freepik.com/foto-gratis/tranquilo-paisaje-marino-iluminado-luz-luna-estrellas-generadas-ia_188544-40164.jpg",
-      "id": 19
-    },
-    {
-      "author": "Rosa Rubio",
       "download_url": "https://www.avolartur.com/wp-content/uploads/2022/05/church-2020258-1920.jpeg",
       "id": 22
     },
@@ -16,9 +11,9 @@
       "id": 23
     },
     {
-      "author": "Rosa",
-      "download_url": "https://viajecaminodesantiago.com/wp-content/uploads/2021/03/pueblo-fisterra-camino-finisterre-muxia.jpg",
-      "id": 24
+      "author": "Rosa Rubio",
+      "download_url": "https://estaticos-cdn.prensaiberica.es/clip/14b48342-714f-4cd0-a025-60ae1ef0b558_source-aspect-ratio_default_0.jpg",
+      "id": 26
     }
   ]
 }
