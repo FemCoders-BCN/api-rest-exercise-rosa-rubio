@@ -6,20 +6,22 @@ axios.defaults.headers.post['Accept'] = 'application/json';
 
 export const FavoriteService = () => {
 
+const baseUrl = 'http://localhost:5000/pictures';
 const urlGetById = '?id';
 
+
 const getAll = () => {
-    const response = axios.get();
+    const response = axios.get(baseUrl);
     return response;
   };
 
 const getById = (id) => {
-  const response = axios.get(`${urlGetById}=${id}`);
+  const response = axios.get(`${baseUrl}/${urlGetById}=${id}`);
   return response;
   }; 
   
 const postPictures = (name, url) => {
-    const response = axios.post('http://localhost:5000/pictures', {
+    const response = axios.post(baseUrl, {
           author: name,
           download_url: url
       })
@@ -27,7 +29,7 @@ const postPictures = (name, url) => {
 }
 
 const updatePictures = (id, name, url) => {
-  const response = axios.put(`${id}`, {
+  const response = axios.put(`${baseUrl}/${id}`, {
     author: name,
     download_url: url
 })
@@ -35,7 +37,7 @@ const updatePictures = (id, name, url) => {
 }
 
 const deletePicture = (id) => {
-  const response = axios.delete(`${id}`);
+  const response = axios.delete(`${baseUrl}/${id}`);
   return response;
 };
 
